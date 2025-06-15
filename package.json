@@ -1,0 +1,17 @@
+{
+  "name": "language-mcp",
+  "version": "1.0.0",
+  "description": "一款对接多语言平台的 MCP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "fastmcp dev index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastmcp": "^3.3.0",
+    "zod": "^3.25.64"
+  }
+}
