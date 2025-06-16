@@ -2,7 +2,6 @@
   "name": "language-mcp",
   "version": "1.0.0",
   "description": "一款对接多语言平台的 MCP",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "fastmcp dev index.js"

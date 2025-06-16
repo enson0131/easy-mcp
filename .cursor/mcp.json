@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "language-mcp": {
+      "command": "npx",
+      "args": ["node", "/Users/enson/Desktop/workspace/language-mcp/packages/mcp-core/dist/index.js"]
+    }
+  }
+}
