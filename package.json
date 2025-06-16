@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "fastmcp": "^3.3.0",
-    "zod": "^3.25.64"
-  }
+  "license": "ISC"
 }

@@ -19,7 +19,7 @@ export const retry = async (fn: () => any, count = 3) => {
   }
   
   
-  export class AsyncSeriesHook {
+export class AsyncSeriesHook {
     tasks: Function[];
     constructor() {
       this.tasks = [];
@@ -61,7 +61,7 @@ export const retry = async (fn: () => any, count = 3) => {
         this.callAsync(...args, finalCallback);
       });
     }
-  }
+}
   
   
   // 使用方法
