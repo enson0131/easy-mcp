@@ -2,7 +2,7 @@
 一款对接多语言平台的 MCP
 
 # 架构设计
-参考了 vite-plugin-vue-mcp 的 `pnpm + monorepo` 的方案
+参考了 vite-plugin-vue-mcp 的 `pnpm + monorepo` 和 Figma-Context-MCP 的设计
 
 
 
