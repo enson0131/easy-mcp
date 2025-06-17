@@ -3,11 +3,18 @@ import { z } from "zod";
 import { AsyncSeriesHook } from "./utils/utils";
 import { resolve } from "path";
 import { program } from "commander";
+import { getLanguage } from "./tools/getLanguage";
 
 export interface ILanguageMcpConfig {
   projectId: string; // 项目id
   env: string; // 环境
   language?: string; // 语言
+  getLanguage?: {
+    method: string;
+    appCode: string;
+    env: string;
+    url: string;
+  };
 }
 
 interface IChainResult {
@@ -63,10 +70,10 @@ const addGetLanguageTools = async (lastResult: IChainResult) => {
       //   project_id: z.string(), // 项目id
       //   path: z.string(), // 路径
     }),
-    execute: async (args) => {
-      //
-      console.log("options");
-      return "hello Language MCP";
+    execute: async (...args) => {
+      console.log("options", options);
+      const result = await getLanguage(options?.getLanguage);
+      return JSON.stringify(result);
     },
   });
 
