@@ -1,6 +1,6 @@
 import type { Plugin } from 'vite';
-import type { ILanguageMcpConfig } from 'mcp-core';
-import { start } from 'mcp-core';
+import type { IMcpConfig  } from 'esay-mcp';
+import { start } from 'esay-mcp';
 
 /**
  * 可以调用 mcp-core 的 Vite 插件，实现语言管理
@@ -10,7 +10,7 @@ import { start } from 'mcp-core';
  * 3. 运用时会判断是否有配置 mcp 文件夹，进行 mcp 配置
  * 
  */
-export default function viteLanguageMcp(options: ILanguageMcpConfig): Plugin {
+export default function viteLanguageMcp(options: IMcpConfig): Plugin {
   return {
     name: 'vite-plugin-language-mcp',
     apply: 'serve', // 开发环境中运行,
