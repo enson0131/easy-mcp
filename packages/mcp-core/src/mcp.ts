@@ -88,8 +88,6 @@ const startServer = async (options?: ILanguageMcpConfig) => {
     currentPivot = currentPivot.next(pipsOperation);
   }
 
-  console.log(`currentPivot -->`, currentPivot);
-
   const pro = currentPivot.run();
 
   pro.catch((err) => {
