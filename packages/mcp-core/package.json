@@ -7,10 +7,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "cli": "language-mcp"
   },
   "bin": {
-    "language-mcp": "dist/index.js"
+    "language-mcp": "dist/cli.js"
   },
   "keywords": [
     "language",
@@ -26,6 +27,7 @@
   "description": "Model Context Protocol server for language",
   "devDependencies": {
     "@types/node": "^24.0.3",
+    "commander": "^14.0.0",
     "tsup": "8.3.5",
     "typescript": "^5.8.3"
   },
