@@ -19,7 +19,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "mcp-core": "workspace:*",
+    "esay-mcp": "workspace:*",
     "tsup": "8.3.5"
   }
 }
