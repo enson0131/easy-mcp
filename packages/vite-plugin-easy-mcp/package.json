@@ -1,12 +1,12 @@
 {
-  "name": "vite-plugin-language-mcp",
+  "name": "vite-plugin-easy-mcp",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsup --watch",
     "build": "tsup",
-    "cli": "language-mcp"
+    "cli": "easy-mcp"
   },
   "keywords": [],
   "author": "",

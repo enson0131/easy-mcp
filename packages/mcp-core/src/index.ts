@@ -1,2 +1,3 @@
 export { start } from "./cli";
-export type { ILanguageMcpConfig } from './mcp'
+export type { IMcpConfig } from './mcp';
+export type {IMcpConfigType, IRequestRes} from './types';

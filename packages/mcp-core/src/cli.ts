@@ -1,18 +1,16 @@
 #!/usr/bin/env node
-import startServer, { ILanguageMcpConfig } from './mcp';
+import startServer, { IMcpConfig } from './mcp';
 import { program } from "commander";
 
 program
-    .name("language-mcp")
+    .name("esay-mcp")
     .usage(`<command> [option]`)
     .version(`1.0.0`, "-v, --version") // 版本号
     .option("-c, --config <path>", "config file path") // 配置文件路径
-    .option("-e, --env <string>", "env") // 环境
-    .option("-l, --language <string>", "language code, like zh-CN, en-US"); // 语言
 
 program.parse(process.argv);
 
-export function start (options?: ILanguageMcpConfig) {
+export function start (options?: IMcpConfig) {
   return startServer(options).catch((error) => {
     console.error("Failed to start server:", error);
     process.exit(1);

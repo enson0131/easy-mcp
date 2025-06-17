@@ -1,37 +1,25 @@
-import { FastMCP } from "fastmcp";
+import { FastMCP, ToolParameters } from "fastmcp";
 import { z } from "zod";
 import { AsyncSeriesHook } from "./utils/utils";
 import { resolve } from "path";
 import { program } from "commander";
 import { getLanguage } from "./tools/getLanguage";
+import { IMcpConfigType, IRequestRes } from "./types";
+import axios, { AxiosRequestConfig } from "axios";
 
-export interface ILanguageMcpConfig {
-  projectId: string; // 项目id
-  env: string; // 环境
-  language?: string; // 语言
-  getLanguage?: {
-    method: string;
-    appCode: string;
-    env: string;
-    url: string;
-  };
+export interface IMcpConfig {
+  config: string; // 配置文件路径
 }
-
-interface IChainResult {
-  options: ILanguageMcpConfig;
-  server: FastMCP;
-}
-
 /**
  * 从命令行、配置环境、函数参数中获取项目配置文件
  */
-const initConfig = async (options?: ILanguageMcpConfig) => {
+const initConfig = async (options?: IMcpConfig) => {
   // 1. 获取命令行的参数
   program.parse(process.argv);
   const opts = program.opts();
-  const configPath = opts.config || resolve(process.cwd(), ".language-mcp.js");
+  const configPath = opts.config || options.config || resolve(process.cwd(), ".easy-mcp.js");
 
-  // 2. 获取配置文件的参数
+  // 2. 获取配置文件
   let configJsonByFile = {};
   try {
     const configModule = await import(configPath);
@@ -40,54 +28,45 @@ const initConfig = async (options?: ILanguageMcpConfig) => {
     console.warn(`无法加载配置文件 ${configPath}:`, error.message);
   }
 
-  // 3. 获取函数上的参数，进行合并
-  return Object.assign(
-    {},
-    configJsonByFile,
-    options || {}
-  ) as ILanguageMcpConfig;
+  return configJsonByFile as IMcpConfigType;
 };
 
-const createServer = async (options) => {
+const createServer = async (options: IMcpConfigType) => {
+  const { name, version, tools } = options;
+
+  
+  
   const server = new FastMCP({
-    name: "language-mcp", // 服务名称
-    version: "1.0.0",
+    name, // 服务名称
+    version,
   });
 
-  return {
-    options,
-    server,
-  } as IChainResult;
+  
+  for(const tool of tools) {
+    server.addTool({
+      name: tool.name,
+      description: tool.description,
+      parameters: tool.parameters as ToolParameters,
+      execute: async (args) => {
+        let action = tool.request;
+        if (typeof tool.request !== 'function') {
+          action = async () => await axios(tool.request as AxiosRequestConfig<any>); 
+        }
+
+        // @ts-ignore TODO fix
+        return (await action(args)) as IRequestRes;
+      }
+    })
+  }
 };
 
-const addGetLanguageTools = async (lastResult: IChainResult) => {
-  const { server, options } = lastResult;
-  // 获取语言列表的工具函数
-  server.addTool({
-    name: "get_language_list",
-    description: "获取语言列表",
-    parameters: z.object({
-      //   project_id: z.string(), // 项目id
-      //   path: z.string(), // 路径
-    }),
-    execute: async (...args) => {
-      console.log("options", options);
-      const result = await getLanguage(options?.getLanguage);
-      return JSON.stringify(result);
-    },
-  });
-
-  return lastResult;
-};
-
-const startServer = async (options?: ILanguageMcpConfig) => {
+const startServer = async (options?: IMcpConfig) => {
   const asyncSeries = new AsyncSeriesHook();
   const init = async () => await initConfig(options);
 
   const pips: Array<(...args) => Promise<any>> = [
     init,
     createServer,
-    addGetLanguageTools,
   ];
 
   let currentPivot = asyncSeries;

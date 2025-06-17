@@ -1,5 +1,5 @@
 {
-  "name": "mcp-core",
+  "name": "esay-mcp",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -7,14 +7,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsup --watch",
-    "build": "tsup",
-    "cli": "language-mcp"
+    "build": "tsup"
   },
   "bin": {
-    "language-mcp": "dist/cli.js"
+    "esay-mcp": "dist/cli.js"
   },
   "keywords": [
-    "language",
+    "generator MCP",
     "mcp",
     "typescript"
   ],
@@ -24,7 +23,7 @@
   ],
   "author": "enson0131",
   "license": "ISC",
-  "description": "Model Context Protocol server for language",
+  "description": "A tool for generating MCP through configuration",
   "devDependencies": {
     "@types/node": "^24.0.3",
     "commander": "^14.0.0",
