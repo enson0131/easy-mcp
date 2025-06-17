@@ -32,9 +32,9 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
 
-  packages/vite-plugin-language-mcp:
+  packages/vite-plugin-easy-mcp:
     dependencies:
-      mcp-core:
+      esay-mcp:
         specifier: workspace:*
         version: link:../mcp-core
       tsup:
