@@ -11,7 +11,7 @@ module.exports = {
       // 获取语言配置
       requestConfig: {
         method: 'GET',
-        url: 'https://customizer.bytello.com/api/client/${appCode}/${env}/${locale}/default' // 获取语料的url
+        url: 'https://xxx.com/api/client/${appCode}/${env}/${locale}/default' // 获取语料的url
       }
     },
     { 
@@ -27,7 +27,7 @@ module.exports = {
         const { appCode, env, locale } = args;
         return {
           method: 'GET',
-          url: `https://customizer.bytello.com/api/client/${appCode}/${env}/${locale}/default` // 获取语料的url
+          url: `https://xxx.com/api/client/${appCode}/${env}/${locale}/default` // 获取语料的url
         }
       }
     }
