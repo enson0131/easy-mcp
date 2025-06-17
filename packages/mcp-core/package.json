@@ -22,6 +22,7 @@
     "README.md"
   ],
   "author": "enson0131",
+  "repository": "https://github.com/enson0131/easy-mcp",
   "license": "ISC",
   "description": "A tool for generating MCP through configuration",
   "devDependencies": {
