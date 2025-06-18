@@ -10,6 +10,7 @@ Node >= 22.12.0
 
 ## 配置案例
 
+例如配置一个语料平台的 MCP 服务，可以获取语料列表
 
 ```js
 module.exports = {
@@ -46,6 +47,21 @@ module.exports = {
       }
     }
   ]
+}
+
+```
+
+
+如果你使用的是 cursor 编辑器，只需要在 cursor 的设置中，添加一个 `easy-mcp` 的命令，然后就可以在 cursor 中使用 `easy-mcp` 命令了
+
+```json
+{
+  "mcpServers": {
+    "language-mcp": {
+      "command": "npx",
+      "args": ["-y", "easy-mcp", "-c", "../.easy-mcp.js"]
+    }
+  }
 }
 
 ```
