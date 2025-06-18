@@ -1,5 +1,5 @@
 {
-  "name": "easy-mcp",
+  "name": "easy-mcp-generator",
   "version": "1.0.2",
   "type": "module",
   "main": "dist/index.js",
@@ -15,7 +15,9 @@
   "keywords": [
     "generator MCP",
     "mcp",
-    "typescript"
+    "typescript",
+    "json",
+    "javascript"
   ],
   "files": [
     "dist",
@@ -24,7 +26,7 @@
   "author": "enson0131",
   "repository": "https://github.com/enson0131/easy-mcp",
   "license": "ISC",
-  "description": "A tool for generating MCP through configuration",
+  "description": "The simplest way to create Model Context Protocol (MCP) servers in JSON or JavaScript.",
   "devDependencies": {
     "@types/node": "^24.0.3",
     "commander": "^14.0.0",
