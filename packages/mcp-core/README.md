@@ -84,6 +84,11 @@ Itool 类型
 | requestConfig    | Record<string, any> \| ((args: any) => IRequestRes) | 是 |  获取数据的方法，axios 的配置 |
 
 
+
+# TODO
+- [ ] 完善配置项，支持更多配置
+- [ ] 自动配置 mcp.json, 例如 https://github.com/antfu/nuxt-mcp/blob/main/packages/vite-plugin-mcp/src/index.ts
+
 # 参考
 - https://github.com/webfansplz/vite-plugin-vue-mcp
 - https://github.com/punkpeye/fastmcp-boilerplate
