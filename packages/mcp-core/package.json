@@ -1,6 +1,6 @@
 {
   "name": "easy-mcp-generator",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,9 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsup --watch",
     "build": "tsup"
-  },
-  "bin": {
-    "easy-mcp-generator": "dist/cli.js"
   },
   "keywords": [
     "generator MCP",
@@ -21,7 +18,8 @@
   ],
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "author": "chenshuofeng",
   "repository": "https://github.com/enson0131/easy-mcp",

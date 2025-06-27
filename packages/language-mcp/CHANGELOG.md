@@ -1,5 +1,12 @@
 # language-mcp
 
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies
+  - easy-mcp-generator@2.0.0
+
 ## 1.1.0
 
 ### Minor Changes

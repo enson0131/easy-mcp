@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-      "moduleResolution": "node",
-      "baseUrl": ".",
-      "declaration": true
-    },
-    "include": ["src"]
-  }
-  

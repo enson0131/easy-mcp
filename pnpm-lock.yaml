@@ -44,7 +44,7 @@ importers:
 
   packages/language-mcp:
     dependencies:
-      'easy-mcp-generator':
+      easy-mcp-generator:
         specifier: workspace:*
         version: link:../mcp-core
       zod:
@@ -87,22 +87,6 @@ importers:
         version: 8.3.5(jiti@2.4.2)(postcss@8.5.5)(typescript@5.8.3)(yaml@2.8.0)
       typescript:
         specifier: ^5.8.3
-        version: 5.8.3
-
-  packages/vite-plugin-easy-mcp:
-    dependencies:
-      easy-mcp-generator:
-        specifier: workspace:*
-        version: link:../mcp-core
-      tsup:
-        specifier: 8.3.5
-        version: 8.3.5(jiti@2.4.2)(postcss@8.5.5)(typescript@5.8.3)(yaml@2.8.0)
-      vite:
-        specifier: ^6.0.0
-        version: 6.0.0(@types/node@24.0.3)(jiti@2.4.2)(yaml@2.8.0)
-    devDependencies:
-      typescript:
-        specifier: ^5.7.3
         version: 5.8.3
 
 packages:
@@ -2448,46 +2432,6 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vite@6.0.0:
-    resolution: {integrity: sha512-Q2+5yQV79EdnpbNxjD3/QHVMCBaQ3Kpd4/uL51UGuh38bIIM+s4o3FqyCzRvTRwFb+cWIUeZvaWwS9y2LD2qeQ==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || ^20.0.0 || >=22.0.0
-      jiti: '>=1.21.0'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      sass-embedded: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.16.0
-      tsx: ^4.8.1
-      yaml: ^2.4.2
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      jiti:
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-      tsx:
-        optional: true
-      yaml:
-        optional: true
-
   wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
 
@@ -4455,7 +4399,8 @@ snapshots:
 
   nano-spawn@1.0.2: {}
 
-  nanoid@3.3.11: {}
+  nanoid@3.3.11:
+    optional: true
 
   natural-compare@1.4.0: {}
 
@@ -4617,6 +4562,7 @@ snapshots:
       nanoid: 3.3.11
       picocolors: 1.1.1
       source-map-js: 1.2.1
+    optional: true
 
   prelude-ls@1.2.1: {}
 
@@ -4828,7 +4774,8 @@ snapshots:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 5.0.0
 
-  source-map-js@1.2.1: {}
+  source-map-js@1.2.1:
+    optional: true
 
   source-map@0.8.0-beta.0:
     dependencies:
@@ -5029,17 +4976,6 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   vary@1.1.2: {}
-
-  vite@6.0.0(@types/node@24.0.3)(jiti@2.4.2)(yaml@2.8.0):
-    dependencies:
-      esbuild: 0.24.2
-      postcss: 8.5.5
-      rollup: 4.43.0
-    optionalDependencies:
-      '@types/node': 24.0.3
-      fsevents: 2.3.3
-      jiti: 2.4.2
-      yaml: 2.8.0
 
   wcwidth@1.0.1:
     dependencies:
