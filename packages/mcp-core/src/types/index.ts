@@ -11,4 +11,6 @@ export interface IMcpConfigType {
     parameters: ToolParameters,
     request: Record<string, any> | ((args: any) => IRequestRes)
   }>
+  transportType?: "stdio" | "httpStream";
+  port?: number;
 }

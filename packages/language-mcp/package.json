@@ -1,0 +1,32 @@
+{
+  "name": "language-mcp",
+  "version": "1.1.0",
+  "description": "基于 easy-mcp-generator 构建的语料平台相关的 MCP 服务",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "language-mcp": "dist/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "tsup": "8.3.5",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "easy-mcp-generator": "workspace:*",
+    "zod": "^3.25.64"
+  },
+  "keywords": [
+    "language",
+    "mcp"
+  ],
+  "author": "enson0131",
+  "license": "ISC"
+}
