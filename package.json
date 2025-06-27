@@ -1,0 +1,41 @@
+{
+  "name": "mcp-manager",
+  "private": true,
+  "version": "1.0.0",
+  "description": "采用 pnpm monorepo + changesets 管理 mcp",
+  "scripts": {
+    "commit": "cz",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
+    "build": "pnpm -r build",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "prerelease": "pnpm build",
+    "release": "pnpm changeset publish",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.29.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^16.1.2",
+    "rimraf": "^6.0.1"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

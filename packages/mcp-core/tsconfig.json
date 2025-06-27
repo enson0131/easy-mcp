@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "module": "ESNext",
+      "baseUrl": ".",
+      "declaration": true,
+    },
+    "include": ["src"]
+  }
+  
